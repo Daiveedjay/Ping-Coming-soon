@@ -19,7 +19,7 @@ This is a solution to the [Ping coming soon page challenge on Frontend Mentor](h
 ### Links
 
 - Solution URL: [Add solution URL here](https://github.com/Daiveedjay/Ping-Coming-soon)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://ping-coming-soon-page-femc.netlify.app/)
 
 ## My process
 
