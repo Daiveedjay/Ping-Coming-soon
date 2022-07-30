@@ -13,10 +13,12 @@ emailButton.addEventListener("click", (e) => {
   ) {
     email.classList.remove("border-error");
     errP.classList.remove("form-error");
+    errP.classList.add("form-correct");
     return true;
   } else {
     email.classList.add("border-error");
     errP.classList.add("hidden");
+    errP.classList.remove("form-correct");
     setTimeout(() => {
       email.classList.remove("border-error");
       errP.classList.remove("hidden");
