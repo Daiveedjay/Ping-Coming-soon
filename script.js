@@ -1,8 +1,8 @@
 "use strict";
 
 let emailButton = document.querySelector(".email-button");
-let email = document.querySelector("input[type=text]");
-let errP = document.querySelector(".form-error");
+let email = document.querySelector(".email-input");
+let errP = document.querySelector(".error-message");
 
 emailButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -11,18 +11,16 @@ emailButton.addEventListener("click", (e) => {
       email.value
     )
   ) {
-    email.classList.remove("border-error");
-    errP.classList.remove("form-error");
     errP.classList.add("form-correct");
     return true;
   } else {
-    email.classList.add("border-error");
-    errP.classList.add("hidden");
+    email.classList.add("error-border");
+    errP.classList.add("error");
     errP.classList.remove("form-correct");
     setTimeout(() => {
-      email.classList.remove("border-error");
-      errP.classList.remove("hidden");
-    }, 3000);
+      email.classList.remove("error-border");
+      errP.classList.remove("error");
+    }, 2000);
     return false;
   }
 });

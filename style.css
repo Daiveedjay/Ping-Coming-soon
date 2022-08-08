@@ -9,6 +9,11 @@
   margin: 0;
   padding: 0;
 }
+
+::placeholder {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 300;
+}
 html {
   font-size: 62.5%;
 }
@@ -34,6 +39,11 @@ main {
   justify-content: space-evenly;
   align-items: center;
 }
+
+.logo {
+  padding: 2rem;
+}
+
 .text-box {
   display: flex;
   flex-direction: column;
@@ -41,6 +51,7 @@ main {
   justify-content: space-between;
   text-align: center;
 }
+
 .text-box h1 {
   font-size: 4rem;
   font-weight: 300;
@@ -63,47 +74,33 @@ form {
   margin: 0 auto;
   width: 65%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 0.5rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr;
+  gap: 1rem;
+  position: relative;
 }
 
-form input {
+.email-input {
   padding: 1rem 2rem;
-  grid-column: 1 / span 2;
   border: 1px solid hsl(0, 0%, 59%);
+  border-radius: 2rem;
+  border-radius: 5px;
+  grid-column: 1 / span 4;
   border-radius: 2rem;
 }
 
-input:focus {
+.email-input:focus {
   outline: hsl(0, 6%, 24%) 1px solid;
+  outline: none;
 }
 
 /* UTILITIES USED TO MAKE THE JS VERIFICATION POSSIBLE */
-.form-error {
-  grid-column: 1 / span 2;
-  grid-row: 2 / span 1;
-  padding-left: 2rem;
-  color: transparent;
-}
-
-.form-correct {
-  display: none;
-}
-
-.hidden {
-  color: red;
-}
-
-.border-error {
-  border: 1px solid red;
-}
-
 .email-button {
-  width: 100%;
   border: none;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  grid-column: 5 / span 1;
+  transition: all 0.2 ease-in;
   cursor: pointer;
-  font-size: 1.1rem;
   background: hsl(223, 87%, 63%);
   color: #fff;
   border-radius: 2rem;
@@ -113,6 +110,36 @@ input:focus {
 .email-button:hover {
   box-shadow: 0 4px 5px hsl(223, 100%, 88%);
   transform: scale(1.05);
+}
+
+.email-input:focus {
+  outline: hsl(0, 6%, 24%) 1px solid;
+}
+
+.error-message {
+  position: absolute;
+  bottom: -2rem;
+  left: 5px;
+  color: transparent;
+}
+
+.error {
+  color: red;
+}
+
+.error-border {
+  border: 1px solid red !important;
+}
+
+.form-correct {
+  color: transparent;
+}
+
+.error-message {
+  width: 100%;
+  position: absolute;
+  bottom: -2rem;
+  left: 1rem;
 }
 
 .image-container {
@@ -178,17 +205,28 @@ footer {
   form {
     max-height: 10rem;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: 1fr 1fr;
     column-gap: 0;
+    row-gap: 2rem;
   }
 
-  .form-error {
-    grid-row: 2 / span 1;
+  .email-input {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
   }
 
   .email-button {
-    grid-row: 3 / span 3;
-    width: 100%;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+  }
+
+  .error-message {
+    bottom: 4.5rem;
+    left: 1rem;
+  }
+  .form-error {
+    position: absolute;
+    bottom: 0;
   }
 
   .image-container img {
@@ -207,6 +245,7 @@ footer {
     margin: 0 auto;
     gap: 3rem;
   }
+
   form {
     width: 75%;
   }
@@ -224,6 +263,10 @@ footer {
   }
   .image-container img {
     width: 90%;
+  }
+
+  footer {
+    gap: 1rem;
   }
 }
 /* 352px */
